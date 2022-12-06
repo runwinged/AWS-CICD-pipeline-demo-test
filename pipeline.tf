@@ -1,5 +1,5 @@
 resource "aws_codebuild_project" "ditf-plan" {
-  name         = "ditf-cicd-plan"
+  name         = "ditf-cicd1-plan"
   description  = "Plan stage for terraform"
   service_role = aws_iam_role.ditf-codebuild-role.arn
 
@@ -87,7 +87,7 @@ resource "aws_codepipeline" "ditf_pipeline" {
       owner           = "AWS"
       input_artifacts = ["tf-code"]
       configuration = {
-        ProjectName = "ditf-cicd-plan"
+        ProjectName = "ditf-cicd1-plan"
       }
     }
   }
