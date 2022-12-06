@@ -1,5 +1,5 @@
 resource "aws_codebuild_project" "ditf-plan" {
-  name         = "ditf-plan"
+  name         = "ditf-cicd-plan"
   description  = "Plan stage for terraform"
   service_role = aws_iam_role.ditf-codebuild-role.arn
 
@@ -24,7 +24,7 @@ resource "aws_codebuild_project" "ditf-plan" {
 }
 
 resource "aws_codebuild_project" "ditf-apply" {
-  name         = "ditf-apply"
+  name         = "ditf-cicd-apply"
   description  = "Apply stage for terraform"
   service_role = aws_iam_role.ditf-codebuild-role.arn
 
